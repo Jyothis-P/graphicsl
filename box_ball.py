@@ -137,7 +137,7 @@ def fall_down(x, y):
     while y >= 25:
         y -= 5
         poly(get_square_vertices(x, y))
-        time.sleep(0.01)
+        time.sleep(0.001)
         refresh()
 
 
