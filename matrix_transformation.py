@@ -1,4 +1,3 @@
-import time
 import numpy as np
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
@@ -35,7 +34,7 @@ def draw_line(p1, p2):
 
 
 def poly(l):
-    glClear(GL_COLOR_BUFFER_BIT)
+    glClear(GL_COLOR_BUFFER_BIT)  # so that previous polygons are removed
     n = len(l)
     points = [[l[i], l[(i + 1) % n]] for i in range(n)]
     for point in points:
@@ -144,7 +143,6 @@ def main():
     glutDisplayFunc(disp)
     glutSpecialFunc(arrow_keys)
     glutKeyboardFunc(keys)
-    glutMouseFunc(mouse)
     glutMainLoop()
 
 
