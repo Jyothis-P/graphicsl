@@ -41,6 +41,23 @@ def poly(l):
         draw_line(*point)
 
 
+def get_mid_point(points):
+    x_max = y_max = 0
+    x_min = y_min = points[0]
+    for point in points:
+        if point[0] > x_max:
+            x_max = point[0]
+        if point[1] > y_max:
+            y_max = point[1]
+        if point[0] < x_min:
+            x_min = point[0]
+        if point[1] < y_min:
+            y_min = point[1]
+    x = (x_max - x_min)/2
+    y = (y_max - y_min)/2
+    return x,y
+
+
 def get_square_vertices(x, y, size=50):
     s = size / 2
     return [[x + s, y + s],
